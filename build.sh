@@ -13,7 +13,7 @@ if [ -z ${TRAVIS_TAG} ]; then
         --from "homeassistant/{arch}-base" \
         --author "Nicolai Bjerre Pedersen <mr.bjerre@gmail.com>" \
         --doc-url "${GITHUB_URL}" \
-        --image "fixated/${ADDON_NAME}-{arch}"
+        --image "jasonatepaint/hassio-${ADDON_NAME}-{arch}"
 else
     echo "New git tagged build found. Building to distribute."
     docker run -it --rm --privileged --name "${ADDON_NAME}" \
@@ -27,5 +27,5 @@ else
         --from "homeassistant/{arch}-base" \
         --author "Nicolai Bjerre Pedersen <mr.bjerre@gmail.com>" \
         --doc-url "${GITHUB_URL}" \
-        --image "fixated/${ADDON_NAME}-{arch}"
+        --image "jasonatepaint/hassio-${ADDON_NAME}-{arch}"
 fi
